@@ -1,0 +1,14 @@
+{
+    "dataset" : "cora",
+    "dataset_path" : "/Users/raunak/Documents/Datasets/Cora",
+    "self_loop" : "True",
+    "normalize_adj" : "True",
+    "task" : "node_classification",
+    "cuda" : "True",
+    "dropout" : 0.5,
+    "hidden_dims" : [16],
+    "epochs" : 200,
+    "lr" : 1e-2,
+    "weight_decay" : 5e-4,
+    "load" : "True"
+}
