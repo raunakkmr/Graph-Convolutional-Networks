@@ -96,7 +96,7 @@ def parse_args():
     parser.add_argument('--dropout', type=float, default=0.5,
                         help='dropout out, currently only for GCN, default: 0.5')
     parser.add_argument('--hidden_dims', type=int, nargs="*",
-                        help='dimensions of hidden layers, length should be equal to num_layers, specify through config.json')
+                        help='dimensions of hidden layers, specify through config.json')
 
     parser.add_argument('--epochs', type=int, default=10,
                         help='number of training epochs, default=10')
@@ -117,7 +117,7 @@ def parse_args():
             json_dict = json.load(f)
             config.update(json_dict)
 
-    config['num_layers'] = len(config['hidden_dims'])
+    config['num_layers'] = len(config['hidden_dims']) + 1
 
     print('--------------------------------')
     print('Config:')
