@@ -20,9 +20,9 @@ def get_criterion(task):
         Loss function for the task.
     """
     if task == 'node_classification':
-        critertion = nn.CrossEntropyLoss()
+        criterion = nn.CrossEntropyLoss()
 
-    return critertion
+    return criterion
 
 def get_dataset(args):
     """
@@ -84,7 +84,7 @@ def parse_args():
     parser.add_argument('--self_loop', action='store_true',
                         help='whether to add self loops to adjacency matrix, default=False')
     parser.add_argument('--normalize_adj', action='store_true',
-                        help='whether to normalize adj like in gcn, default=False')
+                        help='whether to normalize adj, default=False')
 
     parser.add_argument('--task', type=str,
                         choices=['node_classification'],
@@ -94,7 +94,7 @@ def parse_args():
     parser.add_argument('--cuda', action='store_true',
                         help='whether to use GPU, default: False')
     parser.add_argument('--dropout', type=float, default=0.5,
-                        help='dropout out, currently only for GCN, default: 0.5')
+                        help='dropout rate, default: 0.5')
     parser.add_argument('--hidden_dims', type=int, nargs="*",
                         help='dimensions of hidden layers, specify through config.json')
 
